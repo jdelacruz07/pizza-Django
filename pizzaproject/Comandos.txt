@@ -1,0 +1,24 @@
+python3 -m venv venv ; . venv/bin/activate
+python -m pip install Django
+django-admin startproject pizzaproject
+python3 manage.py runserver
+python3 manage.py startapp pizza
+
+CREATE DATABASE database_name; Para una DB diferente de sqlite
+
+python manage.py makemigrations pizza; Para crear la migracion, es decir informar en caso de que los modelos han cambiado.
+python manage.py migrate; Para crear las tablas necesarias de cada dependencia.
+python manage.py sqlmigrate pizza 0002; Para ver el esquema de la base de datos.
+python manage.py check; Para verificar si todo esta bien en el projecto.
+
+
+python manage.py shell
+
+python manage.py createsuperuser; Para crear el usuario que va administrar.
+
+
+docker-compose run web python manage.py makemigrations
+docker-compose run web python manage.py migrate
+docker-compose run web python manage.py createsuperuser
+docker-compose run web python manage.py test pizza; To run test app pizza
+docker-compose up

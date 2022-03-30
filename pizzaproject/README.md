@@ -1,3 +1,5 @@
+# Project pizza with Django
+
 ## Project setup
 ```
 docker-compose run web python manage.py makemigrations;
